@@ -7,9 +7,39 @@ canvas{
     background-image: url(images/grasses68.gif)
 }
 
+#run{
+    background-color: #000;
+    color: #fff;
+}
+
 #talkbox{
     height: 20px;
     color: brown;
     font-size: 26px;
     font-weight: bold;
+}
+
+li{
+    text-align: left;
+}
+
+#RPG{
+    display: block;
+}
+
+#random{
+    display: none;
+}
+
+#task{
+    text-align:center;
+    display: block;
+    position: absolute;
+    left:0;
+    top:0;
+    width:300px;
+}
+
+table{
+    width: 300px;
 }

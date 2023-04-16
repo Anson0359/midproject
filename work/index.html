@@ -6,11 +6,35 @@
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
-        <h1>1111111111111111111111111111</h1>
-        <div>
+        <h1>RPG小遊戲</h1>
+        <div id="RPG">
             <canvas id="myCanvas" width="600" height="600"></canvas>
             <p id="talkBox"></p>
         </div>
+
+        <div id="random">
+            <h2>?</h2>
+            <input id="run" type="button" value="抽獎">
+            <input id="take" type="button" value="領取"><!--要返回頁面-->
+            <ul>
+                <!--獎品內容物-->
+                <li>劍</li>
+                <li>盾</li>
+                <li>斧頭</li>
+                <li>弓箭</li>
+            </ul>
+            <!--最初的圖片-->
+            <img width="200" src="images/box.png">
+        </div>
+
+        <div id="task">
+            <h2>任務</h2>
+            <table id="courseTable"></table>
+            <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+            <script src="topic.js"></script>
+            <script src="main.js"></script>
+        </div>
+
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <script src="main.js"></script>
     </body>
