@@ -269,7 +269,7 @@ $(function(){
         }
         last = randomChildNumber;
         console.log(randomChildNumber);
-        $("h2").text($("li").eq(randomChildNumber).text());
+        $("#boxh2").text($("li").eq(randomChildNumber).text());
         $("img").attr("src",imageURL_Array[randomChildNumber]);
     });
 });
@@ -279,7 +279,7 @@ $(function(){
     $("#take").on("click",function(){
         //
         if(last != -1){
-            $("h2").text("?");
+            $("#boxh2").text("?");
             $("img").attr("src","images/box.png");
             var random = document.getElementById('random');
             var RPG = document.getElementById('RPG');
