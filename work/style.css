@@ -18,7 +18,11 @@ canvas{
     font-size: 26px;
     font-weight: bold;
 }
-
+/*
+ul{
+    text-align: center;
+}
+*/
 li{
     text-align: left;
 }
@@ -40,6 +44,28 @@ li{
     width:300px;
 }
 
+#magic{
+    display: none;
+}
+
+#youtubeplayer{
+    display: block;
+}
+
 table{
     width: 300px;
+}
+/*
+h2{
+    height: 32px;
+    font-size: medium;
+}
+*/
+tr:nth-child(odd) {
+    background-color: #4cf3e7;
+}
+  
+  /* 偶數行 */
+tr:nth-child(even) {
+    background-color: #fd95d3;
 }
