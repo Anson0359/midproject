@@ -40,21 +40,21 @@ $(function(){
         //npc2 == 4
         //npc3 == 5
         //
-        [0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-        [0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-        [0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-        [3, 4, 5, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0, 0, 3, 0, 0, 1, 0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 1, 0, 0, 0, 0],
-        [0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0],
-        [0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0],
-        [0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0],
-        [0, 3, 0, 0, 0, 0, 5, 0, 0, 0, 0, 0, 0, 0, 1],
-        [3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2]
+        [0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 2, 0, 1, 0, 0],
+        [0, 0, 1, 4, 1, 1, 0, 0, 0, 5, 1, 0, 1, 0, 0],
+        [0, 0, 1, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0],
+        [0, 0, 0, 0, 1, 1, 0, 1, 0, 1, 1, 1, 1, 1, 1],
+        [0, 0, 0, 0, 0, 0, 1, 1, 3, 1, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 1, 2, 3, 4, 5, 6, 0, 0, 0, 0, 0, 0, 0, 0]
     ];
 
     ctx = $("#myCanvas")[0].getContext("2d");
@@ -83,11 +83,8 @@ $(function(){
         //task: "",
         enemy: "images/Enemy.png",
         //lab 3 心理測驗
-        magic: "images/magic.png",
+        magic: "images/magic2.png",
         
-        //lab 5 播放器
-        //音樂盒??
-        //music:""
     };
 
     //繪製其他物品
@@ -106,6 +103,8 @@ $(function(){
                     ctx.drawImage(images.npc, 290, 5, 53, 53, y * gridLength, x * gridLength, gridLength, gridLength);
                 }else if (mapArray[x][y] == 5){
                     ctx.drawImage(images.npc, 148, 12, 52, 52, y * gridLength, x * gridLength, gridLength, gridLength);
+                }else if (mapArray[x][y] == 6){
+                    ctx.drawImage(images.magic, 0, 0, 300, 300, y * gridLength, x * gridLength, gridLength, gridLength);
                 }
             }
         }
@@ -179,10 +178,10 @@ $(document).on("keydown", function(event){
                 break;
             case 2: // box
                 $("#talkBox").text("寶箱!!!!!!");
-                var random = document.getElementById('random');
+                var youtubeplayer = document.getElementById('youtubeplayer');
                 var RPG = document.getElementById('RPG');
                 var task = document.getElementById('task');
-                random.style.display = 'block';
+                youtubeplayer.style.display = 'block';
                 RPG.style.display = 'none';
                 task.style.display = 'none';
                 break;
@@ -232,6 +231,12 @@ $(document).on("keydown", function(event){
 
                 break;
             case 6:
+                var magic = document.getElementById('magic');
+                var RPG = document.getElementById('RPG');
+                var task = document.getElementById('task');
+                magic.style.display = 'block';
+                RPG.style.display = 'none';
+                task.style.display = 'none';
                 
                 break;
         }
@@ -296,6 +301,7 @@ var topic = [
     ];
 
 var startDate = new Date();
+//setMonthAndDay(4,18);
 
 $(function(){
     $("#courseTable").append("<tr><th>NO.</th><th>截止時間</th><th>需求</th></tr>");
@@ -316,8 +322,18 @@ $(function(){
 //magic
 $(function () {
     let currentQuiz = null;
+    var magicend = false;
      $("#startButton").on("click",function(){
-         // console.log("Hello");
+
+         if(magicend){
+            var magic = document.getElementById('magic');
+            var RPG = document.getElementById('RPG');
+            var task = document.getElementById('task');
+            magic.style.display = 'none';
+            RPG.style.display = 'block';
+            task.style.display = 'block';
+            magicend=false;
+         }
          if(currentQuiz == null){
              currentQuiz = 0;
              $("#question").text(questions[0].question);
@@ -339,7 +355,8 @@ $(function () {
                          $("#options").empty();
                          $("#options").append(`${finalAnswers[finalResult][1]}<br><br>`);
                          currentQuiz = null;
-                         $("#startButton").attr("value", "重新開始");
+                         $("#startButton").attr("value", "結束占卜");
+                         magicend=true;
                      }else{
                          //go to questions[x]
                          currentQuiz = questions[currentQuiz].answers[i][1] - 1;
@@ -501,6 +518,10 @@ function onPlayerStateChange(event){
                 endSeconds:playTime[currentPlay][1],
                 suggestedQuality:"large"
             });
+            var random = document.getElementById('random');
+            var youtubeplayer = document.getElementById('youtubeplayer');
+            random.style.display='block';
+            youtubeplayer.style.display='none';
         }
     }
     if(event.data==1){
@@ -509,13 +530,15 @@ function onPlayerStateChange(event){
 }
 
 let playList = [
-    "VoAv2Dr3XHw",
+    "U3Bknr37mq0",
     "Q2y7w70kA70",
-    "KSq5wxw9-9Q"
+    "VoAv2Dr3XHw"
+    
 ];
 
 let playTime = [
+    [193,200],
     [42,52],
-    [42,52],
-    [70,72]
+    [231,240]
+    
 ];
